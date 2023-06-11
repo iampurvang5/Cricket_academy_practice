@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>first animation</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+
+    }
+
+    body {
+
+       background-color: rgb(55, 167, 55);
+        
+    }
+
+    #ball {
+
+        animation: ball 3s linear 1s 1 forwards;
+
+
+    }
+
+    .container {
+
+        animation: box 1s linear 5s 1 forwards;
+    }
+
+
+    @keyframes ball {
+        0% {
+            transform: translate(0px, 0px) rotate(0deg);
+        }
+
+        25% {
+            transform: translate(800px, 20px) scale(3, 3) rotate(90deg);
+        }
+
+        50% {
+            transform: translate(800px, 20px) scale(3, 3) rotate(180deg);
+        }
+
+        75% {
+            transform: translate(500px, 180px) scale(4, 4) rotate(270deg);
+
+        }
+
+        100% {
+            transform: translate(500px, 180px) scale(4, 4) rotate(360deg);
+        }
+
+    }
+
+    .main {
+        opacity: 0;
+
+        animation: content 2s linear 6s 1 forwards;
+    }
+
+
+    @keyframes box {
+        from {
+            height: 350px;
+            width: 350px;
+            border: 4px solid silver;
+            border-radius: 8px;
+            margin: -152px 480px;
+            overflow: hidden;
+            position: relative;
+            color: black;
+            opacity: 0;
+
+        }
+
+        to {
+            height: 350px;
+            width: 350px;
+            border: 4px solid silver;
+            border-radius: 8px;
+            margin: -152px 480px;
+            overflow: hidden;
+            position: relative;
+            background-color: burlywood;
+            color: brown;
+            opacity: 1;
+
+
+        }
+    }
+
+    @keyframes content {
+        from {
+            font-family: 'Baloo Bhai 2', cursive;
+            text-align: center;
+            opacity: 0;
+        }
+
+        to {
+            font-family: 'Baloo Bhai 2', cursive;
+            text-align: center;
+            opacity: 1;
+        }
+    }
+    .main button{
+        background-color: red; 
+        width: 300px; 
+        height: 50px; 
+        border-radius: 10px; 
+        color: white;
+    }
+    .main button:hover{
+        cursor: pointer;
+        background-color: green;
+        border: 2px solid darkred;
+        color: navy;
+    }
+</style>
+<script>
+
+    function getFile(){
+
+        let req = new XMLHttpRequest();
+    
+        req.onload =function(){
+            document.write(this.responseText);
+        }
+       req.open("Get","cricket.html" );
+       req.send();
+
+    }
+    
+
+</script>
+
+
+
+<body>
+    <img id="ball" src="ball.png" style="width: 300px; ">
+
+    <div class="container">
+        <div class="main">
+            <h2>Welcome...</h2><br><br>
+            <h2>🏏🏏🏏</h2>
+            <ul>
+                <li>
+                    <h1>Get Access to Top International Coaches</h1>
+                </li><br>
+                <li>Heare we go... click on this button to visit..⬇️</li><br><br>
+                <li><button id="btn" onclick="getFile()">
+                        <h1>🏏Get Started🏏</h1>
+                    </button></li>
+            </ul>
+        </div>
+
+    </div>
+
+    </div>
+   
+
+</body>
+
+</html>
